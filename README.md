@@ -30,7 +30,7 @@ Sallam Thabet
 
 # Description
 
-Project name is `E-commerce Back End` This application allows the user to .
+This is an application that focuses on the e-commerce backend. It shows the relationship between different database models and how they are all interconnected. The purpose of the application is to give the user CRUD functionality for their databases in the e-commerce field.
 
 ## Prerequisites
 
