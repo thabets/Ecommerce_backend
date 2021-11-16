@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
       },
       {
         model: Tag,
-        through: ProductTag,
+
         attributes: ["tag_name"],
       },
     ],
@@ -30,17 +30,18 @@ router.get("/:id", (req, res) => {
   Product.findOne({
     where: {
       id: req.params.id,
-      include: [
-        {
-          model: Category,
-          attributes: ["id", "category_name"],
-        },
-        {
-          model: Tag,
-          attributes: ["id", "tag_name"],
-        },
-      ],
     },
+    include: [
+      {
+        model: Category,
+        attributes: ["category_name"],
+      },
+      {
+        model: Tag,
+        through: ProductTag,
+        attributes: ["tag_name"],
+      },
+    ],
   })
     .then((dbProductData) => {
       if (!dbProductData) {
